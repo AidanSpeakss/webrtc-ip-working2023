@@ -46,7 +46,6 @@ fetchIPs = () => {
 
   rtc.createOffer(
     (result) => {
-      if (debug) console.log("SDP offer successful. Result: ", result);
       rtc.setLocalDescription(result);
       const lines = rtc.localDescription.sdp.split("\n");
       lines.forEach((line) => {
